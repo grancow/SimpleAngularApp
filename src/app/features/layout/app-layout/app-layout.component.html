@@ -1,0 +1,58 @@
+<div class="layout">
+  <!-- Sidebar -->
+  <nav class="layout__sidebar">
+    <h2 class="layout__sidebar-title">{{ userName }}</h2>
+    <div
+      class="layout__sidebar-nav"
+      *ngIf="menu.length > 0; else noAccessTemplate"
+    >
+      <ul class="layout__sidebar-nav-list">
+        <li
+          class="layout__sidebar-nav-item"
+          [class.layout__sidebar-nav-item--has-children]="
+            item.children && item.children.length > 0
+          "
+          *ngFor="let item of menu; trackBy: trackByLabel"
+        >
+          <a
+            *ngIf="item.path"
+            [routerLink]="item.path"
+            routerLinkActive="layout__sidebar-nav-link--active"
+            class="layout__sidebar-nav-link"
+          >
+            {{ item.label }}
+          </a>
+
+          <div *ngIf="item.children && item.children.length > 0">
+            <span>{{ item.label }}</span>
+            <ul class="layout__sidebar-nav-sublist">
+              <li
+                class="layout__sidebar-nav-item"
+                *ngFor="let subItem of item.children; trackBy: trackByLabel"
+              >
+                <a
+                  [routerLink]="subItem.path"
+                  routerLinkActive="layout__sidebar-nav-link--active"
+                  class="layout__sidebar-nav-link"
+                >
+                  {{ subItem.label }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <button (click)="logout()" class="layout__sidebar-logout">Wyloguj</button>
+
+    <ng-template #noAccessTemplate>
+      <p class="layout__sidebar-message">Brak dostępnych opcji</p>
+    </ng-template>
+  </nav>
+
+  <!-- Główna treść -->
+  <main class="layout__content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

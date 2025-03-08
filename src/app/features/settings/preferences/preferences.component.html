@@ -1,0 +1,36 @@
+<div class="preferences">
+  <h2 class="preferences__title">Preferencje użytkownika</h2>
+  
+  <form [formGroup]="preferencesForm" (ngSubmit)="onSubmit()" class="preferences__form">
+    <div class="preferences__form-group">
+      <label class="preferences__form-label preferences__form-label--checkbox">
+        <input type="checkbox" 
+               formControlName="darkMode"
+               class="preferences__form-checkbox">
+        <span class="preferences__form-label-text">Tryb ciemny</span>
+      </label>
+    </div>
+
+    <div class="preferences__form-group">
+      <label class="preferences__form-label preferences__form-label--checkbox">
+        <input type="checkbox" 
+               formControlName="emailNotifications"
+               class="preferences__form-checkbox">
+        <span class="preferences__form-label-text">Powiadomienia email</span>
+      </label>
+    </div>
+
+    <div class="preferences__form-group">
+      <label class="preferences__form-label">Język:</label>
+      <select formControlName="language" class="preferences__form-select">
+        <option value="pl">Polski</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+
+    <button type="submit" class="preferences__form-submit">
+      Zapisz preferencje
+    </button>
+  </form>
+</div> 

@@ -1,0 +1,71 @@
+.preferences {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  &__form {
+    &-group {
+      margin-bottom: 20px;
+    }
+
+    &-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+
+      &--checkbox {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    &-label-text {
+      margin-left: 8px;
+    }
+
+    &-checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    &-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border-color: #666;
+      }
+    }
+
+    &-submit {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+} 

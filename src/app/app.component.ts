@@ -1,13 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { loadSession } from './store/session.actions';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simple-angular-app';
+  title = 'angular-app';
+
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    const savedSession = localStorage.getItem('session');
+    if (savedSession) {
+      const { user, token } = JSON.parse(savedSession);
+      this.store.dispatch(loadSession({ user, token }));
+      console.log('Sesja załadowana z localStorage: ', user)
+    }
+  }
+
 }
