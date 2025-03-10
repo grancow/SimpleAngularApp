@@ -1,0 +1,48 @@
+<div class="app-layout">
+  <!-- Sidebar -->
+  <aside class="app-layout__sidebar">
+    <div class="app-layout__user-info">
+      {{ user?.name }}
+    </div>
+
+    <nav class="app-layout__nav">
+      <ng-container *ngIf="hasAccessToMenu; else noAccess">
+        <ul class="app-layout__menu">
+          <li *ngFor="let item of menu" class="app-layout__menu-item">
+            <a 
+              [routerLink]="item.path" 
+              routerLinkActive="app-layout__menu-link--active"
+              class="app-layout__menu-link"
+            >
+              {{ item.label }}
+            </a>
+            <ul *ngIf="item.children" class="app-layout__menu-submenu">
+              <li *ngFor="let child of item.children" class="app-layout__menu-item">
+                <a 
+                  [routerLink]="child.path" 
+                  routerLinkActive="app-layout__menu-link--active"
+                  class="app-layout__menu-link"
+                >
+                  {{ child.label }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #noAccess>
+        <p class="app-layout__no-access">Brak dostępnych opcji</p>
+      </ng-template>
+    </nav>
+
+    <div class="app-layout__logout">
+      <button class="app-layout__logout-btn" (click)="logout()">
+        Wyloguj
+      </button>
+    </div>
+  </aside>
+
+  <main class="app-layout__main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

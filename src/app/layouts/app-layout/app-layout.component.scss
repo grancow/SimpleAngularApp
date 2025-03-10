@@ -1,0 +1,108 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+
+  &__sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__user-info {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__nav {
+    flex: 1;
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      margin-bottom: 0.5rem;
+
+      &--active {
+        background-color: #e0e0e0;
+      }
+    }
+
+    &-link {
+      display: block;
+      padding: 0.5rem;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+
+      &--active {
+        background-color: #007bff;
+        color: white;
+      }
+    }
+
+    &-submenu {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  &__main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+  }
+
+  &__no-access {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  &__logout {
+    margin-top: auto;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+  }
+
+  &__logout-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__sidebar {
+      width: 200px;
+    }
+
+    &__main {
+      padding: 1rem;
+    }
+  }
+}
