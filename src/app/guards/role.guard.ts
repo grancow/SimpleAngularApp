@@ -3,7 +3,7 @@ import { CanActivateFn, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { selectUser } from '../state/auth/auth.selectors';
 import { map, take } from 'rxjs/operators';
-import { Role } from './models/role.enum';
+import { Role } from '../core/models/role.enum';
 
 export const RoleGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const store = inject(Store);

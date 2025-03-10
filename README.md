@@ -36,25 +36,28 @@ src/
 │   ├── components/          # Komponenty wielokrotnego użytku
 │   │   └── continue-button/ # Komponent przycisku logowania
 │   │
-│   ├── core/               # Rdzeń aplikacji
-│   │   ├── models/         # Interfejsy i typy
-│   │   └── menu.service.ts # Serwis do zarządzania menu
+│   ├── core/                # Rdzeń aplikacji
+│   │   ├── models/          # Interfejsy i typy
+│   │   └── menu.service.ts  # Serwis do zarządzania menu
 │   │
-│   ├── layouts/            # Układy strony
-│   │   └── app-layout/     # Główny układ z menu
+│   ├── guards/              # Guard
+│   │   ├── auth.guard.ts    # Sprawdzanie autoryzacji
+│   │   └── role.guard.ts    # Sprawdzanie ról
 │   │
-│   ├── pages/              # Komponenty stron
-│   │   ├── home/          # Strona główna
-│   │   └── no-access/     # Strona braku dostępu
+│   ├── layouts/             # Układy strony
+│   │   └── app-layout/      # Główny układ z menu
 │   │
-│   ├── state/             # Zarządzanie stanem (NgRx)
-│   │   └── auth/          # Stan autoryzacji
+│   ├── pages/               # Komponenty stron
+│   │   └── dashboard/       # Strona dashboard
+│   │   ├── home/            # Strona główna
+│   │   └── no-access/       # Strona braku dostępu
+│   │   └── profile/         # Strona profile
+│   │   └── settings/        # Strony dla settings (password i preferences)
 │   │
-│   ├── guards/            # Strażnicy routingu
-│   │   ├── auth.guard.ts  # Sprawdzanie autoryzacji
-│   │   └── role.guard.ts  # Sprawdzanie ról
-│   │
-│   └── app.routes.ts      # Konfiguracja routingu
+│   ├── state/               # Zarządzanie stanem (NgRx)
+│   │   └── auth/            # Stan autoryzacji
+|   |
+│   └── app.routes.ts        # Konfiguracja routingu
 ```
 
 ## Technologie

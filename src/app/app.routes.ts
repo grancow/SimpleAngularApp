@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from './core/auth.guard';
-import { RoleGuard } from './core/role.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
 import { Role } from './core/models/role.enum';
 
 export const appRoutes: Routes = [
