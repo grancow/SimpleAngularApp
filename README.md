@@ -57,30 +57,6 @@ src/
 │   └── app.routes.ts      # Konfiguracja routingu
 ```
 
-## Główne Funkcjonalności
-
-### 1. Komponent ContinueButtonComponent
-- Przycisk "Kontynuuj" do logowania
-- Obsługa sesji użytkownika
-- Zapis w NgRx Store
-- Przekierowanie do /app
-- Przywracanie sesji po odświeżeniu
-
-### 2. Komponent AppLayoutComponent
-- Dynamiczne menu w sidebarze
-- Obsługa głównych linków i podlinków
-- Podświetlanie aktywnego linku
-- Wyświetlanie imienia użytkownika
-- Komunikat "Brak dostępnych opcji"
-
-### 3. Obsługa Sesji i Zabezpieczenie Tras
-- Pobieranie stanu z NgRx Store
-- AuthGuard blokuje dostęp do /app
-- RoleGuard sprawdza uprawnienia
-- Przekierowanie na /app/no-access
-- Odświeżanie tokenu
-- Obsługa wylogowania
-
 ## Technologie
 
 - Angular 16+
@@ -130,23 +106,6 @@ src/
     "roles": ["user", "admin"]
   }
 ]
-```
-
-## Rozwój
-
-1. Uruchom w trybie deweloperskim:
-```bash
-ng serve
-```
-
-2. Uruchom testy:
-```bash
-ng test
-```
-
-3. Zbuduj aplikację:
-```bash
-ng build
 ```
 
 ## Licencja
