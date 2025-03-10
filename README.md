@@ -1,113 +1,59 @@
-# Aplikacja Angular z Autoryzacją
+# AuthAngularApp
 
-Aplikacja demonstracyjna zaimplementowana w Angular, prezentująca mechanizm autoryzacji, zarządzanie sesją użytkownika oraz zabezpieczenie tras w aplikacji.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
 
-## Wymagania
+## Development server
 
-- Node.js (wersja 16 lub wyższa)
-- npm (wersja 8 lub wyższa)
-- Angular CLI (wersja 16 lub wyższa)
+To start a local development server, run:
 
-## Instalacja
-
-1. Sklonuj repozytorium:
-```bash
-git clone [adres-repozytorium]
-cd auth-angular-app
-```
-
-2. Zainstaluj zależności:
-```bash
-npm install
-```
-
-3. Uruchom aplikację:
 ```bash
 ng serve
 ```
 
-Aplikacja będzie dostępna pod adresem `http://localhost:4200`
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Struktura Aplikacji
+## Code scaffolding
 
-```
-src/
-├── app/
-│   ├── components/          # Komponenty wielokrotnego użytku
-│   │   └── continue-button/ # Komponent przycisku logowania
-│   │
-│   ├── core/               # Rdzeń aplikacji
-│   │   ├── models/         # Interfejsy i typy
-│   │   └── menu.service.ts # Serwis do zarządzania menu
-│   │
-│   ├── layouts/            # Układy strony
-│   │   └── app-layout/     # Główny układ z menu
-│   │
-│   ├── pages/              # Komponenty stron
-│   │   ├── home/          # Strona główna
-│   │   └── no-access/     # Strona braku dostępu
-│   │
-│   ├── state/             # Zarządzanie stanem (NgRx)
-│   │   └── auth/          # Stan autoryzacji
-│   │
-│   ├── guards/            # Strażnicy routingu
-│   │   ├── auth.guard.ts  # Sprawdzanie autoryzacji
-│   │   └── role.guard.ts  # Sprawdzanie ról
-│   │
-│   └── app.routes.ts      # Konfiguracja routingu
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
 ```
 
-## Technologie
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-- Angular 16+
-- NgRx (State Management)
-- SCSS + BEM (Stylizacja)
-- Angular Material (Komponenty UI)
-
-## Struktura Sesji Użytkownika
-
-```typescript
-{
-  "user": {
-    "id": 1,
-    "name": "Jan Kowalski",
-    "roles": ["user", "admin"]
-  },
-  "token": "mocked-jwt-token"
-}
+```bash
+ng generate --help
 ```
 
-## Przykładowa Struktura Menu
+## Building
 
-```typescript
-[
-  {
-    "label": "Dashboard",
-    "path": "/app/dashboard",
-    "roles": ["user", "admin"]
-  },
-  {
-    "label": "Ustawienia",
-    "roles": ["admin"],
-    "children": [
-      {
-        "label": "Zmiana hasła",
-        "path": "/app/settings/password"
-      },
-      {
-        "label": "Preferencje",
-        "path": "/app/settings/preferences"
-      }
-    ]
-  },
-  {
-    "label": "Profil",
-    "path": "/app/profile",
-    "roles": ["user", "admin"]
-  }
-]
+To build the project run:
+
+```bash
+ng build
 ```
 
-## Licencja
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-MIT
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
